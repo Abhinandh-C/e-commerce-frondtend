@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+   margin: 0px;
+  padding: 0px;
+ }
+
+ body {
+   font-family: "Lato", serif;
+ }
+ 
+ .bg-blue{background:#233a95;}
+ 
+ 
+ .headerWrapper .top-strip{padding:8px 0px ;}
+ .headerWrapper .top-strip p{color: white; font-size: 12px; font-weight: 500;}
+
+ .headerWrapper .header{width: 100%; height: auto; padding: 15px 0px;}
+ .logoWrapper img{width: 100%;}
+
+ .headerWrapper .header .part2 .countryDrop{width: 130px; height: 60px; min-width: 130px; color: black !important; border: 1px solid rgba(0,0,0,0.2) !important; border-radius: 7px !important; padding: 10px 10px;}
+ .headerWrapper .header .part2 .countryDrop{text-align:left; justify-content: flex-start;}
+ .headerWrapper .header .part2 .countryDrop .label{font-size: 9px !important; text-transform: capitalize !important; color:rgba(0,0,0, 0.4) !important;}
+.headerWrapper .header .part2 .countryDrop .name{font-size: .8125rem !important; text-transform: capitalize !important; color:rgba(0,0,0, 0.7) !important; font-weight: 700;}
+.headerWrapper .header .part2 .countryDrop span.ml-auto svg{opacity: 0.7;}
