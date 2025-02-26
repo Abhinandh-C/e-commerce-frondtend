@@ -6,6 +6,7 @@ import SearchBar from '../search';
 import { FiUser } from "react-icons/fi";
 import { IoBagHandleOutline } from "react-icons/io5";
 import Button from '@mui/material/Button';  
+import Navigation from './Navigation';
 
 const Header = () => {
   return (
@@ -48,6 +49,9 @@ const Header = () => {
               </div>
             </div>
           </header>
+
+        <Navigation />
+
         </div>
     </div>
   )
