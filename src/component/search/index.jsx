@@ -30,13 +30,13 @@ const SearchBar = () => {
       <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
-        'Search for Mice',
+        'Search for Mobiles',
         1000, // wait 1s before replacing "Mice" with "Hamsters"
-        'Search for Hamsters',
+        'Search for Electronics',
         1000,
-        'Search for Guinea Pigs',
+        'Search for Fashon',
         1000,
-        'Search for Chinchillas',
+        'Search for Appliances',
         1000
       ]}
       wrapper="span"
