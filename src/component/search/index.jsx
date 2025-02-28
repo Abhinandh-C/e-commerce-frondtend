@@ -48,15 +48,11 @@ const SearchBar = () => {
 
 ):(
     // in search page
-    <div className='searchbar '  >
-      <input type="text" placeholder='Search for products' />
+    <div className='headerSearch'  >
+      <input type="text" placeholder='Search for products...' />
     </div>
   )
-}
-
-    
-      
-      
+}  
       <Button><  IoSearchOutline /></Button>
     </div>
   )
