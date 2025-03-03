@@ -10,7 +10,7 @@ import Navigation from './Navigation';
 
 const Header = () => {
   return (
-    <div>
+    <div  className='navline'>
         <div className='headerWrapper'>
           <div className='top-strip bg-blue'>
             <div className='container'>
@@ -49,10 +49,11 @@ const Header = () => {
               </div>
             </div>
           </header>
-
+<span className='navline' s ></span>
         <Navigation />
 
         </div>
+        
     </div>
   )
 }
