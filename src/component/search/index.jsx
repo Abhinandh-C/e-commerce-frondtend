@@ -48,7 +48,7 @@ const SearchBar = () => {
 
 ):(
     // in search page
-    <div className='headerSearch'  >
+    <div className='searchbar'  >
       <input type="text" placeholder='Search for products...' />
     </div>
   )
