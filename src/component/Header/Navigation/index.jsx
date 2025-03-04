@@ -7,6 +7,8 @@ import { GiTv } from "react-icons/gi";
 import { CiMobile3 } from "react-icons/ci";
 import { GiAmpleDress } from "react-icons/gi";
 import { GiWashingMachine } from "react-icons/gi";
+import { FaAngleRight } from "react-icons/fa6";
+
 
 const Navigation = () => {
 
@@ -35,17 +37,56 @@ const[isOpenSideBar,setisOpenSideBar]=useState(false);
               <ul>
                 <li><Link to="/"><Button>Fashion</Button></Link></li>
                 <li><Link to="/"><Button>Electronics</Button></Link></li>
-                <li><Link to="/"><Button>Mobile</Button></Link></li>
-                <li><Link to="/"><Button>Appliances</Button></Link></li>
+                <li><Link to="/"><Button className=' justify-content-between'>Mobile <FaAngleRight/></Button></Link>
+
+                { <div className='submenu shadow'>
+                <Link to="/"><Button>I Phone</Button></Link>
+                <Link to="/"><Button>Samsung</Button></Link>
+                <Link to="/"><Button>Microsoft</Button></Link>
+                <Link to="/"><Button>Vivo</Button></Link>
+                <Link to="/"><Button>Oppo</Button></Link>
+                <Link to="/"><Button>Nokia</Button></Link>
+                <Link to="/"><Button>HTC</Button></Link>
+                <Link to="/"><Button>Realme</Button></Link>
+                <Link to="/"><Button>Redmi</Button></Link>
+                <Link to="/"><Button>Asus</Button></Link>
+                <Link to="/"><Button>Honer</Button></Link>
+                <Link to="/"><Button>Google</Button></Link>
+                <Link to="/"><Button>Blueberry</Button></Link>
+                
+              </div> }
+              </li>
+
+
+
+             
                 <li><Link to="/"><Button>furniture</Button></Link></li>
                 <li><Link to="/"><Button>Two Wheelers</Button></Link></li>
-                <li><Link to="/"><Button>Fashion</Button></Link></li>
-                <li><Link to="/"><Button>Electronics</Button></Link></li>
-                <li><Link to="/"><Button>Mobile</Button></Link></li>
-                <li><Link to="/"><Button>Appliances</Button></Link></li>
-                <li><Link to="/"><Button>furniture</Button></Link></li>
-                <li><Link to="/"><Button>Two Wheelers</Button></Link></li>
+                <li><Link to="/"><Button>Toys</Button></Link></li>
+                <li><Link to="/"><Button className=' justify-content-between'>Appliances<FaAngleRight/></Button></Link>
+
+
+{<div className='submenu shadow'>
+<Link to="/"><Button>Washing Mechines</Button></Link>
+<Link to="/"><Button>Micro Owen</Button></Link>
+<Link to="/"><Button>Refrigerators </Button></Link>
+<Link to="/"><Button>Smart Televisions</Button></Link>
+<Link to="/"><Button>Air Conditioners</Button></Link>
+</div> }
+
+</li>
+                <li><Link to="/"><Button>Beauty Products</Button></Link></li>
+                <li><Link to="/"><Button>Grocerys</Button></Link></li>
+
+
+
+                <div className='extraTab mt-3'>
+                <li><Link to="/"><Button className='mt-3' >Offers On The Day</Button></Link></li>
+                <li><Link to="/"><Button>Top 100 Products</Button></Link></li>
+                <li><Link to="/"><Button>New Arraivals</Button></Link></li>
+                </div>
               </ul>
+
             </div> }
 
             </div>
@@ -81,24 +122,10 @@ const[isOpenSideBar,setisOpenSideBar]=useState(false);
 
               <li className="list-inline-item px-2"> <Link to="/"><Button><CiMobile3/>&nbsp;MOBILES</Button></Link>
               
-              <div className='submenu shadow'>
-                <Link to="/"><Button>I Phone</Button></Link>
-                <Link to="/"><Button>Samsung</Button></Link>
-                <Link to="/"><Button>Huwai</Button></Link>
-                <Link to="/"><Button>Vivo</Button></Link>
-                <Link to="/"><Button>Oppo</Button></Link>
-              </div> 
+              
               </li>
 
               <li className="list-inline-item px-2"> <Link to="/"><Button><GiWashingMachine/>&nbsp;Appliances</Button></Link>
-              
-              <div className='submenu shadow'>
-                <Link to="/"><Button>Washing Mechines</Button></Link>
-                <Link to="/"><Button>Micro Owen</Button></Link>
-                <Link to="/"><Button>Refrigerators </Button></Link>
-                <Link to="/"><Button>Smart Televisions</Button></Link>
-                <Link to="/"><Button>Air Conditioners</Button></Link>
-              </div>
               </li>
 
               
