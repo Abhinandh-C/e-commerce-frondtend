@@ -185,7 +185,7 @@ nav .navpart2 ul li .submenu a button :hover{background: #f1f1f1;}
   .productItem .info{padding: 15px;}
   .productItem .info h4{font-size: 15px; font-weight: 500;}
 
-  .productItem .oldPrice{font-size: 18px; font-weight: bold; color: #ab9bb4 ; text-decoration: line-through;}
-  .productItem .newPrice{font-size: 20px; font-weight: bold; color: #d51243;}
+  .oldPrice{font-size: 18px; font-weight: bold; color: #ab9bb4 ; text-decoration: line-through;}
+  .newPrice{font-size: 20px; font-weight: bold; color: #d51243;}
 
   .productItem .imageWrapper{height: 220px; width: 380px;}

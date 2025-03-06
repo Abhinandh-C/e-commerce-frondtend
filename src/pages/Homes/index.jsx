@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HomeBanner from "../../component/homebanner";
 import add from "../../assets/images/animated.gif";
 import Button from "@mui/material/Button";
@@ -10,8 +10,11 @@ import { Navigation } from "swiper/modules";
 import Rating from "@mui/material/Rating";
 import Card from "react-bootstrap/Card";
 // import Button  from "react-bootstrap/Button";
+import axios from "axios";
 
 const Home = () => {
+  const [data, setData] = useState([]);
+
   var settings = {
     dots: true,
     infinite: false,
@@ -19,6 +22,15 @@ const Home = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
   };
+  const url = "https://fakestoreapi.com/products";
+  const fetchData = async () => {
+    const response = await axios.get(url);
+    setData(response.data);
+    console.log(response.data);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -59,7 +71,10 @@ const Home = () => {
                   className="mySwiper"
                 >
                   <SwiperSlide>
-                    <Card style={{ width: "18rem" }}>
+                    {data.map((item) => (
+                      <div key={item.id} className="d-flex flex-row">
+                        <Card style={{ width: "18rem" }}>
+                        
                       <div
                         style={{
                           height: "200px",
@@ -71,7 +86,9 @@ const Home = () => {
                       >
                         <Card.Img
                           variant="top"
-                          src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+                          src={item.
+                            image
+                            }
                           style={{
                             maxHeight: "100%",
                             maxWidth: "100%",
@@ -80,17 +97,30 @@ const Home = () => {
                         />
                       </div>
                       <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                        <Rating name="read-only" value={5} readOnly size="small"precision={0.5} />
+                        <Card.Title>{item.title}</Card.Title>
+                        
+                        <div className="info">
+                          <p className="text-success d-block">In Stock</p>
+
+                          <Rating
+                            name="read-only "
+                            value={item.rating
+                            }
+                            readOnly
+                            size="small"
+                            precision={0.5}
+                          />
+                          <div className="d-flex  ">
+                            <span className="oldPrice">$9.6</span>
+                            <span className="newPrice ms-2">{item.price}</span>
+                          </div>
+                        </div>
                         <Button variant="primary">Go somewhere</Button>
                       </Card.Body>
                     </Card>
+                    </div>
+                    ))}
                   </SwiperSlide>
-             
                 </Swiper>
               </div>
             </div>
