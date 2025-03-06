@@ -13,9 +13,19 @@
 
  body {
    font-family: "Lato", serif;
+   font-size: 14px;
+   color: rgba(0,0,0, 0.8);
  }
  
  .bg-blue{background:#233a95;} 
+
+ /* @media (min-width: 1300px){
+  .container, .container-lg, .container-md, .container-sm, .containerxl {
+    max-width: 1200px;
+  }
+ } */
+ cursor{cursor: pointer;}
+ .text-light{color: #ab9bb4!important;}
 
 
  ::-webkit-scrollbar{width: 8px; height: 8px;}
@@ -102,14 +112,21 @@ border-right: #ffffff;
 }
 
 nav .navpart1 .catWrapper{position: relative; }
-nav .navpart1 .catWrapper .sideBarNav{width: 100%; height:0px; opacity: 0; background: #fff;  border: 1px solid #e4e5ee; position: absolute; top: 147%; left: 0px;  padding: 15px 0px; transition: all 0.2s; visibility: hidden; z-index: 100;}
+nav .navpart1 .catWrapper .sideBarNav{ width: 100%; height:0px; opacity: 0; background: #fff;  border: 1px solid #e4e5ee; position: absolute; top: 147%; left: 0px;  padding: 15px 0px; transition: all 0.2s; visibility: hidden; z-index: 100; }
 nav .navpart1 .catWrapper .sideBarNav.open{height: auto; opacity: 1; visibility: inherit;}
+nav .navpart1 .catWrapper .sideBarNav button{font-family: "Dosis", serif; font-weight: 400;}
+
 
 nav .navpart1 .catWrapper .sideBarNav ul{padding: 0px; }
 nav .navpart1 .catWrapper .sideBarNav ul li{width: 100%; list-style: none; padding: 0px 15px;}
 nav .navpart1 .catWrapper .sideBarNav ul li button {color: black; width: 100%; justify-content: flex-start; text-transform: capitalize;}
 nav .navpart1 .catWrapper .sideBarNav ul li button :hover{background: transparent;}
 
+
+nav .navpart1 .catWrapper .sideBarNav ul li {position: static;}
+nav .navpart1 .catWrapper .sideBarNav ul li .submenu {position: absolute; top: 0px; left: 101%; width: 250px; height: 100%; z-index: 100; background: #fff; opacity: 0; visibility: hidden; transition:all 0.2s ease-in-out; border: 1px solid #e4e5ee; border-left: 1px solid #e4e5ee; padding: 12px;}
+nav .navpart1 .catWrapper .sideBarNav ul li:hover .submenu{opacity: 1; visibility: inherit;left: 100%; }
+nav .navpart1 .catWrapper .sideBarNav .extraTab{border-top: 1px solid #e4e5ee;}
 
 
 nav .allcartTab{background: #2bbef9; padding: 10px 15px !important; border-radius: 30px !important;}
@@ -143,3 +160,32 @@ nav .navpart2 ul li .submenu a button :hover{background: #f1f1f1;}
 .homeBannerSection{position: relative; overflow: hidden;}
 .homeBannerSection *{outline: none;}
 
+.homeBannerSection .slick-dots {
+  bottom: 8px; }
+
+  .homeBannerSection .slick-dots li button:before{color: #2bbef9;  }
+
+  .homeBannerSection .slick-dots li.slick-active button:before {color:#383a95;  font-size: 8px;}
+
+
+  .cursor{ height: 350px; width: 350px;}
+
+  .HomeProducts{padding: 25px 0px; width: 100%;}
+
+  .HomeProducts .banner{width: 100%; border-radius: 7px; overflow: hidden;}
+
+  .productRow .hd{font-size: 25px;font-weight: 600;font-family: "Dosis", serif;}
+
+  .productRow .viewAllButton{padding:5px 14px; background: #fff; border: 1px solid rgba(0,0,0, 0.1); border-radius: 25px; color: #ab9bb4 ; font-size: 10px; height: 34px; width: 125px; text-transform: none;}
+  .productRow .viewAllButton .view{font-size: 12px; display: flex; position: relative;}
+
+
+  .productItem{width: 100%; height: auto; border: 1px solid rgba(0,0,0, 0.1); cursor: pointer;}
+
+  .productItem .info{padding: 15px;}
+  .productItem .info h4{font-size: 15px; font-weight: 500;}
+
+  .productItem .oldPrice{font-size: 18px; font-weight: bold; color: #ab9bb4 ; text-decoration: line-through;}
+  .productItem .newPrice{font-size: 20px; font-weight: bold; color: #d51243;}
+
+  .productItem .imageWrapper{height: 220px; width: 380px;}
