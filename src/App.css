@@ -189,3 +189,10 @@ nav .navpart2 ul li .submenu a button :hover{background: #f1f1f1;}
   .newPrice{font-size: 20px; font-weight: bold; color: #d51243;}
 
   .productItem .imageWrapper{height: 220px; width: 380px;}
+
+  .addTocart {text-transform: none;}
+
+  .heart-icon:hover{background-color:#383a95 ;}
+  .heart-icon svg:hover{color:white ;}
+
+
