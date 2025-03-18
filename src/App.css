@@ -18,7 +18,7 @@
  }
 
  body {
-   font-family: "Lato", serif;
+  font-family: "Dosis", serif;
    font-size: 14px;
    color: rgba(0,0,0, 0.8);
  }
@@ -334,3 +334,58 @@ margin: 0px 15px 0px 0px;
   font-size: 11px;
   font-family: "Inter", sans-serif;
 }
+
+.product_listing .productListing{gap: 20px;
+  width: 100%;
+
+}
+
+.product_listing .container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 15px 0px;
+}
+
+
+.product_listing .productListing .sidde{
+  width: 20%; flex: 0 0 20%;  
+}
+.product_listing .productListing .content_right{
+  width: 80%; flex: 0 0 80%;
+}
+
+.product_listing .productListing .sidebar .filterBox h6{font-weight: 600;
+
+}
+
+
+.product_listing .productListing .sidebar .filterBox .scroll li{list-style: none; margin-bottom: 0px; width: 100%;}
+
+.product_listing .productListing .sidebar .filterBox .scroll ul{padding: 0px 0px 0px 8px; margin: 0px;}
+
+.custom-checkbox .MuiCheckbox-root {
+  padding: 2px; 
+}
+
+
+.css-rizt0-MuiTypography-root {font-size: 13px !important;}
+
+
+.css-1umw9bq-MuiSvgIcon-root {
+  width: 15px !important;
+  height: 15px !important;
+  
+ 
+}
+
+.css-j8yymo {
+  padding: 0px 0px 0px 55px !important;
+}
+
+.css-rizt0-MuiTypography-root {
+  padding: 0px 0px 0px 12px;
+  
+} 
+
+

@@ -13,7 +13,7 @@ import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { GiSelfLove } from "react-icons/gi";
 import DialogueEnlarge from "./DialogueEnlarge";
-import Footer from "./Footer";
+
 
 
 const Home = () => {
@@ -306,7 +306,7 @@ const Home = () => {
           product={selectedProduct}
         />
       )}
-      <Footer/>
+      
     </div>
   );
 };

@@ -12,11 +12,11 @@ const Header = () => {
   return (
     <div  className='navline'>
         <div className='headerWrapper'>
-          <div className='top-strip bg-blue'>
+        {/* <div className='top-strip bg-blue'>
             <div className='container'>
               <p className='mb-0 mt -0 text-center'>Due to the <b> High Order Alert </b>order may be processed with a slight delay</p>
             </div>
-          </div>
+          </div> */}
 
           {/* logo has been added  */}
           <header className='header'>
