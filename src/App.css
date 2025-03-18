@@ -369,7 +369,7 @@ margin: 0px 15px 0px 0px;
 }
 
 
-.css-rizt0-MuiTypography-root {font-size: 13px !important;}
+
 
 
 .css-1umw9bq-MuiSvgIcon-root {
@@ -385,7 +385,26 @@ margin: 0px 15px 0px 0px;
 
 .css-rizt0-MuiTypography-root {
   padding: 0px 0px 0px 12px;
+  font-size: 13px !important;
+  color: #71778E;
   
 } 
 
 
+.filterBox{
+  margin-bottom: 50px;
+}
+
+
+.range-slider .range-slider__thumb {
+  background: #000 !important;
+  height: 12px !important;
+  width: 12px !important;
+}
+
+.range-slider .range-slider__range {
+  background: #000 !important;
+  height: 30% !important;
+}
+
+.range-slider {background:#e0e6ff !important;}
