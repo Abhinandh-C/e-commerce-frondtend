@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from '../sidebar/Sidebar'
+import shoee from '../../assets/images/bannershoe.jpeg'
 
 const Listing = () => {
   return (
@@ -12,7 +13,7 @@ const Listing = () => {
 
             </div>
             <div className="content_right">
-              right_content
+              <img className=''style={{height:"250px",width:"85%",borderRadius:"7px"}} src={shoee} alt="banner" />
             </div>
           </div>
 
