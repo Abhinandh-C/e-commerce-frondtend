@@ -344,7 +344,7 @@ margin: 0px 15px 0px 0px;
   display: flex;
   gap: 20px;
   width: 100%;
-  padding: 15px 0px;
+  padding: 55px 0px;
 }
 
 
@@ -353,6 +353,7 @@ margin: 0px 15px 0px 0px;
 }
 .product_listing .productListing .content_right{
   width: 80%; flex: 0 0 80%;
+  padding-left: 40px;
 }
 
 .product_listing .productListing .sidebar .filterBox h6{font-weight: 600;
@@ -360,7 +361,7 @@ margin: 0px 15px 0px 0px;
 }
 
 
-.product_listing .productListing .sidebar .filterBox .scroll li{list-style: none; margin-bottom: 0px; width: 100%;}
+.product_listing .productListing .sidebar .filterBox .scroll li{list-style: none; margin-bottom: 4px; width: 100%;}
 
 .product_listing .productListing .sidebar .filterBox .scroll ul{padding: 0px 0px 0px 8px; margin: 0px;}
 
@@ -392,7 +393,7 @@ margin: 0px 15px 0px 0px;
 
 
 .filterBox{
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 

@@ -4,6 +4,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
+import shoe from '../../assets/images/shoes.gif'
+import { Link} from 'react-router-dom';
 
 const Sidebar = () => {
 
@@ -59,6 +61,53 @@ const[value2,setValue2]=useState(0)
                 </div>
                 </div>
 
+                <div className="filterBox">
+                <h6>PRODUCT STATUS</h6>
+                <div className='scroll'>
+                <ul>
+                    <li>
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultnotChecked />} label="In Stock" />
+                    </li>
+                    <li>
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultnotChecked />} label="On Sale" />
+                    </li>
+                    
+                </ul>
+     
+    </div>
+            </div>
+
+            <div className="filterBox">
+                <h6>BRANDS</h6>
+                <div className='scroll'>
+                <ul>
+                    <li>
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultnotChecked />} label="Calvin Klein" />
+                    </li>
+                    <li>
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultnotChecked />} label="Nike" />
+                    </li>
+                    <li>
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultnotChecked />} label="Nykaa" />
+                    </li>
+                    <li>
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultnotChecked />} label="Nestlé" />
+                    </li>
+                    <li>
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultnotChecked />} label="Crocs" />
+                    </li>
+                    
+                </ul>
+     
+    </div>
+            </div>
+
+           
+
+<Link to="#">
+ <img className='shoe' style={{width:"263px",height:"350px"}} src={shoe} alt="shoe" /> 
+
+ </Link>
         </div>
       
     </div>
