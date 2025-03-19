@@ -409,3 +409,62 @@ margin: 0px 15px 0px 0px;
 }
 
 .range-slider {background:#e0e6ff !important;}
+
+
+.showby{
+  height: 55px;
+  width: 85%;
+  background-color: #f7f8fd;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  justify-content: space-between;
+}
+
+
+
+.sort {
+  height: 20px    ;
+  width: 20px;
+  color: #c2c2d3;
+  margin-right: 10px;
+
+}
+
+.sort:hover{
+  fill: #000;
+  color: #000;
+}
+
+.bb:hover{
+background: none;
+}
+
+.showw{
+  color: #c2c2d3 !important;
+  text-transform: none !important;  
+}
+
+.showw:hover{
+  background: none;
+  }
+.num{
+  color: #000;
+  margin-left: 5px;
+
+}
+
+.css-1toxriw-MuiList-root-MuiMenu-list {
+  width: 73px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    background-color:whitesmoke;
+}
+
+.css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root {
+  font-size: 14px !important;
+}
