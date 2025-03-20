@@ -37,7 +37,7 @@ const Home = () => {
   useEffect(() => {
     const fetchNewData = async () => {
       try {
-        const response = await axios.get("https://fakestoreapi.in/api/products?page=2");
+        const response = await axios.get("https://api.escuelajs.co/api/v1/products");
         if (Array.isArray(response.data)) {
           setNewData(response.data);
         } else if (response.data.products && Array.isArray(response.data.products)) {
@@ -84,7 +84,7 @@ const Home = () => {
               <div className="product_row w-100 mt-4">
                 <Swiper
                   slidesPerView={3}
-                  spaceBetween={-180}
+                  spaceBetween={-50}
                   pagination={{ clickable: true }}
                   modules={[Navigation]}
                   className="mySwiper"
@@ -97,6 +97,7 @@ const Home = () => {
                           height: "400px",
                           display: "flex",
                           flexDirection: "column",
+                          
                         }}
                       >
                         {/* Image Container */}
@@ -197,7 +198,7 @@ const Home = () => {
               <div className="product_row w-100 mt-4">
                 <Swiper
                   slidesPerView={4}
-                  spaceBetween={-260}
+                  spaceBetween={-80}
                   pagination={{ clickable: true }}
                   modules={[Navigation]}
                   className="mySwiper"
@@ -226,7 +227,7 @@ const Home = () => {
                         >
                           <Card.Img className="cardImage"
                             variant="top"
-                            src={obj.image}
+                            src={obj.images}
                             style={{
                               maxHeight: "95%",
                               maxWidth: "95%",
