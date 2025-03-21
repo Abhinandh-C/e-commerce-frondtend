@@ -183,7 +183,7 @@ const Home = () => {
             <div className="col-md-9 productRow w-100">
               <div className="d-flex align-items-center justify-content-between">
                 <div className="info mt-5">
-                  <h3 className="mb-0 hd">ELECTRONICS</h3>
+                  <h3 className="mb-0 hd">Suggested For You</h3>
                   <p className="text-light text-sml mb-0">
                   New products with updated stocks.
                   </p>
