@@ -148,7 +148,7 @@ nav .allcartTab .icon2 svg{font-size: 15px !important;}
 
 nav .navpart2 ul{margin-bottom: 0%;}
 nav .navpart2 ul li a{text-decoration: none;}
-nav .navpart2 ul li a button{ font-family: "Dosis", serif; font-size: 15px; font-weight: 600; text-decoration: none; color: rgba(0,0,0, 0.7);text-transform: uppercase; display: flex; align-items: center; padding: 10px 20px;
+nav .navpart2 ul li a button{ font-family: "Dosis", serif; font-size: 15px; font-weight: 600; text-decoration: none; color: rgba(0,0,0, 0.7);text-transform: uppercase; display: flex; align-items: center; 
 transition: all 0.2s ease-in-out; border-radius: 25px;}
 
 nav .navpart2 ul li a button:hover{background: #f0faff; color: #2bbef9;}
@@ -467,4 +467,35 @@ background: none;
 
 .css-1rju2q6-MuiButtonBase-root-MuiMenuItem-root {
   font-size: 14px !important;
+}
+
+
+
+.productItem.two{
+  width:350px !important;
+   height:400px !important;
+   display: flex !important;
+
+}
+.productItem.one{
+  width:100% !important;
+   height:300px !important;
+   display: flex !important;
+   flex-direction: row !important;
+}
+
+.normalImage{
+  max-height: 95%;
+  max-width: 95%;
+}
+
+.imegeOne{
+height:250px;
+width:300px;
+margin-top: 5rem;
+background: none !important;
+}
+
+.imegeOne svg{
+  background: none !important;
 }
