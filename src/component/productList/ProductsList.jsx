@@ -44,7 +44,7 @@ const ProductsList = (props) => {
             key={item.id}
             style={{
               width: "250px",
-              height: "400px",
+              height: "450px",
 
               display: "flex",
               flexDirection: "column",
