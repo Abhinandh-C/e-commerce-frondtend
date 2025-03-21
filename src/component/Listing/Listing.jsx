@@ -11,17 +11,16 @@ import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
 import ProductsList from "../productList/ProductsList";
 
-
 const Listing = () => {
-
-    const [anchorEl, setAnchorEl] = useState(null);
-    const openDropdown = Boolean(anchorEl);
-    const handleClick = (event) => {
-      setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-      setAnchorEl(null);
-    };
+  const[productView,setProductView] =useState('three')
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openDropdown = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
 
   return (
@@ -42,13 +41,13 @@ const Listing = () => {
 
               <div className="showby mt-4">
                 <div className="firstSide">
-                  <Button className="bb">
+                  <Button onClick={()=>setProductView('one')} className="bb">
                     <FaListCheck className="sort" />
                   </Button>
-                  <Button className="bb">
+                  <Button onClick={()=>setProductView('two')} className="bb">
                     <HiViewGridAdd className="sort" />
                   </Button>
-                  <Button className="bb">
+                  <Button onClick={()=>setProductView('three')} className="bb">
                     <BsFillGrid3X3GapFill className="sort" />
                   </Button>
                 </div>
@@ -67,29 +66,24 @@ const Listing = () => {
                       "aria-labelledby": "basic-button",
                     }}
                   >
-                    <MenuItem onClick={handleClose}>4</MenuItem>
-                    <MenuItem onClick={handleClose}>8</MenuItem>
-                    <MenuItem onClick={handleClose}>16</MenuItem>
-                    <MenuItem onClick={handleClose}>32</MenuItem>
+                    <MenuItem onClick={handleClose}>12</MenuItem>
+                    <MenuItem onClick={handleClose}>24</MenuItem>
+                    <MenuItem onClick={handleClose}>36</MenuItem>
+                    <MenuItem onClick={handleClose}>48</MenuItem>
                   </Menu>
                 </div>
               </div>
 
               {/* productList */}
-<div>
-  <ProductsList/>
-</div>
-             
+              <div className="product_insert">
+                <ProductsList itemView={productView}/>
+              </div>
 
               {/* productList End Here */}
             </div>
           </div>
         </div>
       </section>
-
-               
-
-
     </div>
   );
 };
