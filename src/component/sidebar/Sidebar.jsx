@@ -20,31 +20,31 @@ const[value2,setValue2]=useState(0)
                 <div className='scroll'>
                 <ul>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Spare Parts" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Spare Parts" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Beverages" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Beverages" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Comics" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Comics" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Packaged Foods" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Packaged Foods" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Kitchen Appliances" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Kitchen Appliances" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Beauty Care" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Beauty Care" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Footwear" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Footwear" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Toys & Games" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Toys & Games" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Grocery & Food" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Grocery & Food" />
                     </li>
                 </ul>
      
@@ -66,10 +66,10 @@ const[value2,setValue2]=useState(0)
                 <div className='scroll'>
                 <ul>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="In Stock" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="In Stock" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="On Sale" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="On Sale" />
                     </li>
                     
                 </ul>
@@ -82,19 +82,19 @@ const[value2,setValue2]=useState(0)
                 <div className='scroll'>
                 <ul>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Calvin Klein" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Calvin Klein" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Nike" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Nike" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Nykaa" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Nykaa" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Nestlé" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Nestlé" />
                     </li>
                     <li>
-                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox defaultChecked />} label="Crocs" />
+                    <FormControlLabel className='w-100 custom-checkbox' control={<Checkbox />} label="Crocs" />
                     </li>
                     
                 </ul>
