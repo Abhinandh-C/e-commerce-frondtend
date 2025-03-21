@@ -6,6 +6,10 @@ import { SiVexxhost } from "react-icons/si";
 const DialogueEnlarge = ({ show, handleClose, product }) => {
   const [quantity, setQuantity] = useState(1);
 
+  const productImage = Array.isArray(product.images) && product.images.length > 0
+   ? product.images[0] 
+    : product.image
+
   return (
     <Modal show={show} onHide={handleClose} size="lg" centered>
       <Modal.Body>
@@ -13,7 +17,7 @@ const DialogueEnlarge = ({ show, handleClose, product }) => {
           {/* Left Side - Product Images */}
           <div className="product-images d-flex flex-column me-4">
             <img
-              src={product.image}
+              src={productImage}
               alt={product.title}
               style={{ width: "250px", height: "250px", objectFit: "contain" }}
             />
@@ -39,7 +43,8 @@ const DialogueEnlarge = ({ show, handleClose, product }) => {
               </span>
             </p>
 
-            <p className="mt-3">{product.description}</p>
+            <p className="mt-3">
+            {product.description.length > 200 ? product.description.slice(0, 200) + "..." : product.description}</p>
 
             {/* Quantity Selector */}
             <div className="d-flex align-items-center">
