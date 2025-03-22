@@ -496,3 +496,85 @@ margin-top: 5rem;
 background: none !important;
 }
 
+.productDetails_section{
+  padding: 45px 0px;
+  background-color: #f7f8fd;
+
+}
+
+.details_heading{
+  font-family: "Inter", sans-serif;
+  font-size: 26px;
+  
+  
+
+}
+
+.detailing_Container{
+  background-color: white;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.rate{
+  margin-left: 20px;
+}
+
+
+.newPriceProduct{font-size: 24px; font-weight: bold; color: #d51243;}
+
+.oldprice{font-size: 18px; font-weight: bold; color: #ab9bb4 ; text-decoration: line-through; margin-top: 5px;}
+
+.bg{
+  color: #00b853;
+  border-radius: 20px;
+  background-color: #e5f8ed;
+  font-size: 11px;
+  font-weight: 600;
+  box-sizing: border-box;
+  width: 70px;
+  height: 25px;
+border: none;
+
+} 
+
+.product_cart{
+  margin-left:20px;
+  width: 130px;
+  height: 38px;
+  background-color: #233a95;
+}
+
+.wish{
+  width: 110px;
+  height: 28px;
+  font-size: 12px;
+  font-weight: 500;
+  
+}
+
+.wishh{
+  width: 110px;
+  height: 28px;
+  font-size: 11px;
+  font-weight: 500;
+  border: none ;
+}
+
+.lastList li{
+  list-style-type: none;
+ 
+  
+}
+.lastList ul{
+  padding: 0%;
+}
+
+.lastList{
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+.tickmark{
+  color: #00b853;
+}
