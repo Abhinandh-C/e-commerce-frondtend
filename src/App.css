@@ -589,3 +589,40 @@ border: none;
   transform: scale(1.2);
 
 }
+
+.table thead tr th {
+  background-color: #ececec !important;
+
+}
+.table thead th:first-child {
+
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+
+  }
+.table thead th:last-child {
+
+  border-bottom-right-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+
+  }
+
+  .table thead th{
+    border: 0px !important;
+  }
+.ImgWrapper {
+  width:100% !important;
+  overflow: hidden;
+
+}
+
+.imgWrapper{
+  width:150px;
+  height: 158px;
+}
+
+.cartItemImgWrapper{
+  width: 350px;
+}
+
+  
