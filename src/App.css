@@ -578,3 +578,14 @@ border: none;
 .tickmark{
   color: #00b853;
 }
+
+.productLink{
+  text-decoration: none;
+  color: #000;
+}
+
+.productLink:hover{
+  color:#d51243;
+  transform: scale(1.2);
+
+}
