@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { GiSelfLove } from "react-icons/gi";
 import DialogueEnlarge from "../../pages/Homes/DialogueEnlarge";
+import { Link } from "react-router-dom";
 
 const ProductsList = (props) => {
   const [data, setData] = useState([]);
@@ -97,8 +98,8 @@ const ProductsList = (props) => {
 
             {/* Card Body */}
             <Card.Body className="d-flex flex-column justify-content-between">
-              <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}>
-                {item.title} 
+              <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}><Link className="productLink" to="/product/:id">
+                {item.title} </Link>
                   
                  
               </Card.Title>
