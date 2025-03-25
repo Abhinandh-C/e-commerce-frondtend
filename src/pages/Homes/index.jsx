@@ -13,7 +13,7 @@ import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { GiSelfLove } from "react-icons/gi";
 import DialogueEnlarge from "./DialogueEnlarge";
-
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -94,7 +94,7 @@ const Home = () => {
                       <Card
                         style={{
                           width: "250px",
-                          height: "400px",
+                          height: "420px",
                           display: "flex",
                           flexDirection: "column",
                           
@@ -146,8 +146,8 @@ const Home = () => {
 
                         {/* Card Body */}
                         <Card.Body className="d-flex flex-column justify-content-between">
-                          <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}>
-                            {item.title.length > 20 ? item.title.slice(0, 20) + "..." : item.title}
+                          <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}><Link className="productLink" to="/product/:id">
+                            {item.title.length > 50 ? item.title.slice(0, 50) + "..." : item.title}</Link>
                           </Card.Title>
 
                           <div className="info">
@@ -160,15 +160,15 @@ const Home = () => {
                           </div>
 
                           <Button
-                            variant="primary"
-                            className="mt-auto"
-                            onClick={() => {
-                              setSelectedProduct(item);
-                              setShowModal(true);
-                            }}
-                          >
-                            <span className="addTocart"> Add to Cart</span>
-                          </Button>
+                variant="contained"
+                sx={{ textTransform: "none", marginTop: "auto" }}
+                onClick={() => {
+                  setSelectedProduct(item);
+                  setShowModal(true);
+                }}
+              >
+                Add to Cart
+              </Button>
                         </Card.Body>
                       </Card>
                     </SwiperSlide>
@@ -209,7 +209,7 @@ const Home = () => {
                       <Card
                         style={{
                           width: "250px",
-                          height: "400px",
+                          height: "420px",
                           display: "flex",
                           flexDirection: "column",
                         }}
@@ -260,8 +260,8 @@ const Home = () => {
 
                         {/* Card Body */}
                         <Card.Body className="d-flex flex-column justify-content-between">
-                          <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}>
-                            {obj.title.length > 20 ? obj.title.slice(0, 20) + "..." : obj.title}
+                          <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}><Link className="productLink" to="/product/:id">
+                          {obj.title.length > 50 ? obj.title.slice(0, 50) + "..." : obj.title}</Link>
                             
                             
                           </Card.Title>
@@ -269,7 +269,7 @@ const Home = () => {
                           <div className="info">
                             <p className="text-success">In Stock</p>
                            
-                           <p>Color: {obj.color} </p>
+                           <p> {obj.description.length >30 ?obj.description.slice(0,30)+ "...":obj.description} </p>
                             <div className="d-flex">
                               <span className="oldPrice"> ₹{Math.round((obj.price / 88) * 100)}</span>
                               <span className="newPrice ms-2">₹{obj.price}</span>
@@ -277,15 +277,15 @@ const Home = () => {
                           </div>
 
                           <Button
-                            variant="primary"
-                            className="mt-auto"
-                            onClick={() => {
-                              setSelectedProduct(obj);
-                              setShowModal(true);
-                            }}
-                          >
-                            <span className="addTocart"> Add to Cart</span>
-                          </Button>
+                variant="contained"
+                sx={{ textTransform: "none", marginTop: "auto" }}
+                onClick={() => {
+                  setSelectedProduct(item);
+                  setShowModal(true);
+                }}
+              >
+                Add to Cart
+              </Button>
                         </Card.Body>
                       </Card>
                     </SwiperSlide>
