@@ -35,6 +35,7 @@ const[isOpenSideBar,setisOpenSideBar]=useState(false);
 
             { <div className={`sideBarNav ${isOpenSideBar===true ?'open' : ''}`}>
               <ul>
+                
                 <li><Link to="/"><Button>Fashion</Button></Link></li>
                 <li><Link to="/"><Button>Electronics</Button></Link></li>
                 <li><Link to="/"><Button className=' justify-content-between'>Mobile <FaAngleRight/></Button></Link>
@@ -98,7 +99,7 @@ const[isOpenSideBar,setisOpenSideBar]=useState(false);
               <li className="list-inline-item px-2"> <Link to="/"><Button>Home</Button></Link></li>
 
 
-              <li className="list-inline-item px-2"> <Link to="/"><Button><GiAmpleDress/>&nbsp;Fashion</Button></Link>
+              <li className="list-inline-item px-2"> <Link to="/cat/:1"><Button><GiAmpleDress/>&nbsp;Fashion</Button></Link>
               
               <div className='submenu shadow'>
                 <Link to="/"><Button>Clothing</Button></Link>
@@ -109,7 +110,7 @@ const[isOpenSideBar,setisOpenSideBar]=useState(false);
               </div>
               </li>
 
-              <li className="list-inline-item px-2"> <Link to="/"><Button><GiTv/>&nbsp;Electronics</Button></Link>
+              <li className="list-inline-item px-2"> <Link to="/cat/:2"><Button><GiTv/>&nbsp;Electronics</Button></Link>
               
               <div className='submenu shadow'>
                 <Link to="/"><Button>Audio</Button></Link>
@@ -120,12 +121,12 @@ const[isOpenSideBar,setisOpenSideBar]=useState(false);
               </div>
               </li>
 
-              <li className="list-inline-item px-2"> <Link to="/"><Button><CiMobile3/>&nbsp;MOBILES</Button></Link>
+              <li className="list-inline-item px-2"> <Link to="/cat/:3"><Button><CiMobile3/>&nbsp;MOBILES</Button></Link>
               
               
               </li>
 
-              <li className="list-inline-item px-2"> <Link to="/"><Button><GiWashingMachine/>&nbsp;Appliances</Button></Link>
+              <li className="list-inline-item px-2"> <Link to="/cat/:4"><Button><GiWashingMachine/>&nbsp;Appliances</Button></Link>
               </li>
 
               
