@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { PiShoppingCartSimple } from "react-icons/pi";
 import { FaHeart, FaBalanceScale } from "react-icons/fa";
 import { MdOutlineDone } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -80,10 +81,10 @@ const ProductDetails = () => {
                   +
                 </Button>
 
-                <Button className="product_cart">
+                <Link to="/cart"> <Button className="product_cart">
                   {" "}
                   <PiShoppingCartSimple /> Add To Cart
-                </Button>
+                </Button></Link>
               </div>
 
               <div className="align-items-center mb-4">
