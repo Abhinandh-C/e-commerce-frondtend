@@ -37,10 +37,12 @@ const Header = () => {
                </div>
                 
                <div className='userIcon d-flex justify-content-between border-black '>
+                
                 <Button className='circle '><FiUser /></Button>
                   <span className='price '>$5.25</span>
                   <div className='position-relative ml-2'>
-                  <Button className='cartTab'><IoBagHandleOutline /></Button>
+                  <Link to="/cart">
+                  <Button className='cartTab'><IoBagHandleOutline /></Button></Link>
                   <span className='count d-flex align-items-center justify-content-center'>1</span>
                </div>
                </div>
