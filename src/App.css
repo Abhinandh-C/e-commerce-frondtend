@@ -625,4 +625,16 @@ border: none;
   width: 350px;
 }
 
-  
+.table th, .table td {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+
+.remove{
+  cursor: pointer;
+}
+
+.remove svg{
+  font-size: 20px;
+}

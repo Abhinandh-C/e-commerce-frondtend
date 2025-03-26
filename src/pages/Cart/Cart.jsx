@@ -6,6 +6,7 @@ import Rating from "@mui/material/Rating";
 import { Link } from 'react-router-dom';
 import { Button } from "react-bootstrap";
 import { useState } from 'react';
+import { IoClose } from "react-icons/io5";
 
 const Cart = () => {
 
@@ -46,7 +47,7 @@ const Cart = () => {
                                 <h6>iuus fviv se p fesjsfddnc uh vdhhjndx </h6>
                                 <Rating value={4} readOnly size="small" precision={0.5} />
                             </div>
-                        </div>
+                          </div>
                         </Link>
                       </td>
                       <td>2700</td>
@@ -56,20 +57,23 @@ const Cart = () => {
                       <Button
                   variant="outline-secondary"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                >
+                  >
                   -
                 </Button>
                 <span className="mx-2">{quantity}</span>
                 <Button
                   variant="outline-secondary"
                   onClick={() => setQuantity(quantity + 1)}
-                >
+                  >
                   +
                 </Button>
 
-                      </td>
-                      <td>gsvdf</td>
-                      <td>bzsfdv</td>
+                      </td>  
+
+
+
+                      <td>2700</td>
+                      <td><span className='remove'><IoClose /></span></td>
                     </tr>
                   </tbody>
                 </table>
