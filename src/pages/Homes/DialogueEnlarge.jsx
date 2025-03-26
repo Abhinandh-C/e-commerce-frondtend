@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { FaHeart, FaBalanceScale } from "react-icons/fa";
 import { SiVexxhost } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 const DialogueEnlarge = ({ show, handleClose, product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -62,7 +63,7 @@ const DialogueEnlarge = ({ show, handleClose, product }) => {
 
             {/* Add to Cart & Wishlist Buttons */}
             <div className="d-flex mt-3">
-              <Button variant="primary" className="me-3">Add to Cart</Button>
+            <Link to="/cart"> <Button variant="primary" className="me-3">Add to Cart</Button></Link>
               <Button variant="outline-secondary"><FaHeart /> Add to Wishlist</Button>
               <Button variant="outline-secondary" className="ms-2"><FaBalanceScale /> Compare</Button>
             </div>
