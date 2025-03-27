@@ -37,8 +37,8 @@ const Header = () => {
                </div>
                 
                <div className='userIcon d-flex justify-content-between border-black '>
-                
-                <Button className='circle '><FiUser /></Button>
+                <Link to="/profile">
+                <Button className='circle '><FiUser /></Button></Link>
                   <span className='price '>$5.25</span>
                   <div className='position-relative ml-2'>
                   <Link to="/cart">
