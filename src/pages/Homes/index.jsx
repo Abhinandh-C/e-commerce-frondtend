@@ -280,7 +280,7 @@ const Home = () => {
                 variant="contained"
                 sx={{ textTransform: "none", marginTop: "auto" }}
                 onClick={() => {
-                  setSelectedProduct(item);
+                  setSelectedProduct(obj);
                   setShowModal(true);
                 }}
               >
