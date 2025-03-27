@@ -8,26 +8,43 @@ import Listing from './component/Listing/Listing';
 import ProductDetails from './pages/Homes/ProductDetails';
 import Cart from './pages/Cart/Cart';
 import Profile from './pages/profile/Profile';
+import { useState ,createContext } from 'react';
 
-
+ export const MyContext = createContext();
 function App() {
+  
+const [isHeaderFooterShow,setIsHeaderFooterShow] =useState(true);
+
+
+const values={
+  isHeaderFooterShow,
+  setIsHeaderFooterShow
+}
+
 
   return (
     <>
      <BrowserRouter>
-     <Header />
+     <MyContext.Provider value={values}>
+
+     {
+      isHeaderFooterShow ===true &&  <Header />
+     }
+    
      <Routes>
       
       <Route path="/" exact={true} element={<Home />} />
       <Route path="/cat/:id" exact={true} element={<Listing />} />
       <Route path="/product/:id" exact={true} element={<ProductDetails />} />
       <Route path="/cart" exact={true} element={<Cart />} />
-      <Route path="/Profile" exact={true} element={<Profile/>} />
+      <Route path="/Profile/signIn" exact={true} element={<Profile/>} />
 
       </Routes >
 
+      {isHeaderFooterShow ===true  && <Footer />} 
+      
+     </MyContext.Provider>
      </BrowserRouter>
-     <Footer/>
     
     </>
   )
