@@ -763,3 +763,61 @@ font-weight:700;
   background-color: #f1456e !important;
   transition: all 0.2s ease-in-out;
 }
+
+.signInPage {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to right, #1e3d81, #2334a3);
+  overflow: hidden;
+}
+
+.shape-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.shape-bottom svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+.signInPage .box{
+  display: flex;
+margin: auto;
+  width: 400px;
+  height: 500px;
+  background-color: white;
+  position: relative;
+  z-index: 100;
+}
+
+.signInPage .box h2{
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Merriweather", serif;
+}
+
+.signInPage .box form{
+  padding: 20px 30px;
+}
