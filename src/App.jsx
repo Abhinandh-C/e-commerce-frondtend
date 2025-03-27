@@ -7,6 +7,7 @@ import Footer from './pages/Homes/Footer';
 import Listing from './component/Listing/Listing';
 import ProductDetails from './pages/Homes/ProductDetails';
 import Cart from './pages/Cart/Cart';
+import Profile from './pages/profile/Profile';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/cat/:id" exact={true} element={<Listing />} />
       <Route path="/product/:id" exact={true} element={<ProductDetails />} />
       <Route path="/cart" exact={true} element={<Cart />} />
+      <Route path="/Profile" exact={true} element={<Profile/>} />
 
       </Routes >
 
