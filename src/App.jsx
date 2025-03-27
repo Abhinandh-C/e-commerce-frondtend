@@ -14,11 +14,14 @@ import { useState ,createContext } from 'react';
 function App() {
   
 const [isHeaderFooterShow,setIsHeaderFooterShow] =useState(true);
+const [isFooterShow,setIsFooterShow] =useState(true);
 
 
 const values={
   isHeaderFooterShow,
-  setIsHeaderFooterShow
+  setIsHeaderFooterShow,
+  isFooterShow,
+  setIsFooterShow
 }
 
 
@@ -28,7 +31,7 @@ const values={
      <MyContext.Provider value={values}>
 
      {
-      isHeaderFooterShow ===true &&  <Header />
+      isHeaderFooterShow === true &&  <Header />
      }
     
      <Routes>
@@ -41,7 +44,7 @@ const values={
 
       </Routes >
 
-      {isHeaderFooterShow ===true  && <Footer />} 
+      {isFooterShow === true  && <Footer />} 
       
      </MyContext.Provider>
      </BrowserRouter>
