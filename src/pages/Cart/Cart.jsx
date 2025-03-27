@@ -40,7 +40,61 @@ const Cart = () => {
                         <Link className="productLink" to="/product/1">
                           <div className="d-flex align-items-center cartItemImgWrapper">
                             <div className="imgWrapper">
-                              <img src={sb} alt="redbull" className="w-100" />
+                              <img src={sb} alt="redbull" className="w-75" />
+                            </div>
+                            <div
+                              className="info px-3"
+                              style={{ fontWeight: "bold" }}
+                            >
+                              <h6>iuus fviv se p fesjsfddnc uh vdhhjndx </h6>
+                              <Rating
+                                value={4}
+                                readOnly
+                                size="small"
+                                precision={0.5}
+                              />
+                            </div>
+                          </div>
+                        </Link>
+                      </td>
+                      <td>2700</td>
+
+                      <td>
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                        >
+                          -
+                        </Button>
+                        <span className="mx-2">{quantity}</span>
+                        <Button
+                          variant="outline-secondary"
+                          onClick={() => setQuantity(quantity + 1)}
+                        >
+                          +
+                        </Button>
+                      </td>
+
+                      <td>2700</td>
+                      <td>
+                        <span className="remove">
+                          <IoClose />
+                        </span>
+                      </td>
+                    </tr>
+
+
+
+
+
+
+                    {/*  */}
+                    <tr>
+                      <td>
+                        <Link className="productLink" to="/product/1">
+                          <div className="d-flex align-items-center cartItemImgWrapper">
+                            <div className="imgWrapper">
+                              <img src={redbull} alt="redbull" className="w-75" />
                             </div>
                             <div
                               className="info px-3"
@@ -85,12 +139,16 @@ const Cart = () => {
 
                     {/*  */}
 
+
+
+
+
                     <tr>
                       <td>
                         <Link className="productLink" to="/product/1">
                           <div className="d-flex align-items-center cartItemImgWrapper">
                             <div className="imgWrapper">
-                              <img src={sb} alt="redbull" className="w-100" />
+                              <img src={moist} alt="redbull" className="w-75" />
                             </div>
                             <div
                               className="info px-3"
@@ -133,245 +191,12 @@ const Cart = () => {
                       </td>
                     </tr>
 
-                    <tr>
-                      <td>
-                        <Link className="productLink" to="/product/1">
-                          <div className="d-flex align-items-center cartItemImgWrapper">
-                            <div className="imgWrapper">
-                              <img src={sb} alt="redbull" className="w-100" />
-                            </div>
-                            <div
-                              className="info px-3"
-                              style={{ fontWeight: "bold" }}
-                            >
-                              <h6>iuus fviv se p fesjsfddnc uh vdhhjndx </h6>
-                              <Rating
-                                value={4}
-                                readOnly
-                                size="small"
-                                precision={0.5}
-                              />
-                            </div>
-                          </div>
-                        </Link>
-                      </td>
-                      <td>2700</td>
+                    {/*  */}
 
-                      <td>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        >
-                          -
-                        </Button>
-                        <span className="mx-2">{quantity}</span>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(quantity + 1)}
-                        >
-                          +
-                        </Button>
-                      </td>
 
-                      <td>2700</td>
-                      <td>
-                        <span className="remove">
-                          <IoClose />
-                        </span>
-                      </td>
-                    </tr>
 
-                    <tr>
-                      <td>
-                        <Link className="productLink" to="/product/1">
-                          <div className="d-flex align-items-center cartItemImgWrapper">
-                            <div className="imgWrapper">
-                              <img src={sb} alt="redbull" className="w-100" />
-                            </div>
-                            <div
-                              className="info px-3"
-                              style={{ fontWeight: "bold" }}
-                            >
-                              <h6>iuus fviv se p fesjsfddnc uh vdhhjndx </h6>
-                              <Rating
-                                value={4}
-                                readOnly
-                                size="small"
-                                precision={0.5}
-                              />
-                            </div>
-                          </div>
-                        </Link>
-                      </td>
-                      <td>2700</td>
 
-                      <td>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        >
-                          -
-                        </Button>
-                        <span className="mx-2">{quantity}</span>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(quantity + 1)}
-                        >
-                          +
-                        </Button>
-                      </td>
-
-                      <td>2700</td>
-                      <td>
-                        <span className="remove">
-                          <IoClose />
-                        </span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <Link className="productLink" to="/product/1">
-                          <div className="d-flex align-items-center cartItemImgWrapper">
-                            <div className="imgWrapper">
-                              <img src={sb} alt="redbull" className="w-100" />
-                            </div>
-                            <div
-                              className="info px-3"
-                              style={{ fontWeight: "bold" }}
-                            >
-                              <h6>iuus fviv se p fesjsfddnc uh vdhhjndx </h6>
-                              <Rating
-                                value={4}
-                                readOnly
-                                size="small"
-                                precision={0.5}
-                              />
-                            </div>
-                          </div>
-                        </Link>
-                      </td>
-                      <td>2700</td>
-
-                      <td>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        >
-                          -
-                        </Button>
-                        <span className="mx-2">{quantity}</span>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(quantity + 1)}
-                        >
-                          +
-                        </Button>
-                      </td>
-
-                      <td>2700</td>
-                      <td>
-                        <span className="remove">
-                          <IoClose />
-                        </span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <Link className="productLink" to="/product/1">
-                          <div className="d-flex align-items-center cartItemImgWrapper">
-                            <div className="imgWrapper">
-                              <img src={sb} alt="redbull" className="w-100" />
-                            </div>
-                            <div
-                              className="info px-3"
-                              style={{ fontWeight: "bold" }}
-                            >
-                              <h6>iuus fviv se p fesjsfddnc uh vdhhjndx </h6>
-                              <Rating
-                                value={4}
-                                readOnly
-                                size="small"
-                                precision={0.5}
-                              />
-                            </div>
-                          </div>
-                        </Link>
-                      </td>
-                      <td>2700</td>
-
-                      <td>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        >
-                          -
-                        </Button>
-                        <span className="mx-2">{quantity}</span>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(quantity + 1)}
-                        >
-                          +
-                        </Button>
-                      </td>
-
-                      <td>2700</td>
-                      <td>
-                        <span className="remove">
-                          <IoClose />
-                        </span>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <Link className="productLink" to="/product/1">
-                          <div className="d-flex align-items-center cartItemImgWrapper">
-                            <div className="imgWrapper">
-                              <img src={sb} alt="redbull" className="w-100" />
-                            </div>
-                            <div
-                              className="info px-3"
-                              style={{ fontWeight: "bold" }}
-                            >
-                              <h6>iuus fviv se p fesjsfddnc uh vdhhjndx </h6>
-                              <Rating
-                                value={4}
-                                readOnly
-                                size="small"
-                                precision={0.5}
-                              />
-                            </div>
-                          </div>
-                        </Link>
-                      </td>
-                      <td>2700</td>
-
-                      <td>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        >
-                          -
-                        </Button>
-                        <span className="mx-2">{quantity}</span>
-                        <Button
-                          variant="outline-secondary"
-                          onClick={() => setQuantity(quantity + 1)}
-                        >
-                          +
-                        </Button>
-                      </td>
-
-                      <td>2700</td>
-                      <td>
-                        <span className="remove">
-                          <IoClose />
-                        </span>
-                      </td>
-                    </tr>
+                  
                   </tbody>
                 </table>
               </div>
