@@ -1,15 +1,27 @@
 import React from "react";
+import { MyContext } from "../../App";
 import sb from "../../assets/images/sb.jpeg";
 import moist from "../../assets/images/moist.jpeg";
 import redbull from "../../assets/images/redbull.jpeg";
 import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import { useState } from "react";
+import { useState,useContext ,useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 
 
 const Cart = () => {
+
+  const context = useContext(MyContext);
+
+  useEffect(() => {
+    context.setIsHeaderFooterShow(false);
+  }, [context]);
+
+
+
+
+
   const [quantity, setQuantity] = useState(1);
   return (
     <div>
