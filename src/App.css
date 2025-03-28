@@ -812,13 +812,13 @@ margin: auto;
   z-index: 100;
 }
 
-.signInPage .box h2{
+ .box h2{
   font-size: 28px;
   font-weight: 600;
   font-family: "Merriweather", serif;
 }
 
-.signInPage .box form{
+ .box form{
   padding: 10px 30px;
 }
 
@@ -852,7 +852,7 @@ width: 100%;
 }
 
 
-.signInPage .box .form_group{
+ .box .form_group{
   margin-bottom: 10px;
 }
 
@@ -867,4 +867,26 @@ width: 100%;
 .signInButton:hover{
   background-color: #f1456e !important;
   transition: all 0.2s ease-in-out;
+}
+
+.signUpPage .box{
+  display: flex;
+margin: auto;
+  width: 400px;
+  height:auto;
+  background-color: white;
+  position: relative;
+  z-index: 100;
+}
+
+.signUpPage {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to right, #1e3d81, #2334a3);
+  overflow: hidden;
 }
