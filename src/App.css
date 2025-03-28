@@ -72,12 +72,15 @@
 
 header .userIcon{ width: 160px;margin-left: 50px; display: flex; align-items: center;
   gap: 15px;} 
-header .userIcon .circle{align-items: end; justify-content: end; min-width: 40px !important ; height: 40px; width: 40px !important; border-radius: 50% !important; border: 1px solid rgba(0,0,0,0.1) !important; color: black;}
-header .userIcon .circle svg{font-size: 28px;}
-.userIcon .price{font-size: 18px; color: rgba(0,0,0, 0.8); font-weight: 600;}
-header .userIcon .cartTab{align-items: end; justify-content: end; min-width: 40px !important ; height: 40px; width: 40px !important; border-radius: 50% !important; border: 1px solid rgba(0,0,0,0.1) !important; color: black; background: #fff1ee !important;}
-header .userIcon .cartTab svg{font-size: 28px; color: #ea2b0f !important;}
-header .userIcon .count{position: absolute; top: -13%; right:-18%; background:#ea2b0f; border-radius: 50%; color: #fff1ee; width: 25px; height: 20px;}
+ 
+header .userIcon .circle{align-items: end; justify-content: end; height: 30px; width: 30px !important; border-radius: 50% !important; border: 1px solid rgba(0,0,0,0.1) !important; color: black; background-color: white !important;}
+header .userIcon .circle svg{position: absolute; font-size: 18px;  top: 37%;
+  right: 16%; }
+.userIcon .price{font-size: 16px; color: rgba(0,0,0, 0.8); font-weight: 600;}
+header .userIcon .cartTab{align-items: end; justify-content: end;  height: 30px; width: 30px !important; border-radius: 50% !important; border: 1px solid rgba(0,0,0,0.1) !important; color: black; background: #fff1ee !important;}
+header .userIcon .cartTab svg{position: absolute; font-size: 18px;  top: 19%;
+  right: 19%; color: #ea2b0f !important;}
+header .userIcon .count{position: absolute; top: -13%; right:0%; background:#ea2b0f; border-radius: 50%; color: #fff1ee; width: 15px; height: 15px;}
 
  @media ( max-width:770px){
   header .headerSearch .animation{
@@ -889,4 +892,15 @@ margin: auto;
   flex-direction: column;
   background: linear-gradient(to right, #1e3d81, #2334a3);
   overflow: hidden;
+}
+
+.homepageSignIn{
+
+  font-size: 15px;
+ height: 30px !important;
+ width: 80px !important;
+ background-color: #383a95 !important;
+ border: none;
+ font-size: 14px !important;
+ font-weight: 600;
 }

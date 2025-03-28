@@ -5,10 +5,15 @@ import CountryDrop from '../CountryDropdown';
 import SearchBar from '../search';
 import { FiUser } from "react-icons/fi";
 import { IoBagHandleOutline } from "react-icons/io5";
-import Button from '@mui/material/Button';  
+import { Button } from 'react-bootstrap';
 import Navigation from './Navigation';
+import { MyContext } from "../../App";
+import { useContext } from 'react';
 
 const Header = () => {
+
+   const context = useContext(MyContext);
+
   return (
     <div  className='navline'>
         <div className='headerWrapper'>
@@ -37,8 +42,12 @@ const Header = () => {
                </div>
                 
                <div className='userIcon d-flex justify-content-between border-black '>
-                <Link to="/profile/signIn">
-                <Button className='circle '><FiUser /></Button></Link>
+                {
+                  context.isLoggedIn ===true ?  <Link to="/profile/signIn"><Button className='homepageSignIn'>Sign In</Button></Link> :
+                  <Button className='circle '><FiUser /></Button>
+                }
+       
+                
                   <span className='price '>$5.25</span>
                   <div className='position-relative ml-2'>
                   <Link to="/cart">
