@@ -16,13 +16,16 @@ function App() {
   
 const [isHeaderFooterShow,setIsHeaderFooterShow] =useState(true);
 const [isFooterShow,setIsFooterShow] =useState(true);
+const [isLoggedIn,setIsLoggedIn] =useState(true)
 
 
 const values={
   isHeaderFooterShow,
   setIsHeaderFooterShow,
   isFooterShow,
-  setIsFooterShow
+  setIsFooterShow,
+  isLoggedIn,
+  setIsLoggedIn
 }
 
 
