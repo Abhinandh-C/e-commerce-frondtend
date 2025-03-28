@@ -9,6 +9,7 @@ import ProductDetails from './pages/Homes/ProductDetails';
 import Cart from './pages/Cart/Cart';
 import Profile from './pages/profile/Profile';
 import { useState ,createContext } from 'react';
+import SignUp from './pages/profile/SignUp';
 
  export const MyContext = createContext();
 function App() {
@@ -41,6 +42,7 @@ const values={
       <Route path="/product/:id" exact={true} element={<ProductDetails />} />
       <Route path="/cart" exact={true} element={<Cart />} />
       <Route path="/Profile/signIn" exact={true} element={<Profile/>} />
+      <Route path="/signUp" exact={true} element={<SignUp/>} />
 
       </Routes >
 
