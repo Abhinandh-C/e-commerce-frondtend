@@ -29,7 +29,9 @@ const Profile = () => {
         <div className="container">
           <div className=" box card p-3 shadow border-0">
             <div className="text-center">
+              <a href="/">
               <img src={logo} alt="logo" className="w-75" />
+              </a>
             </div>
 
             <form>
@@ -69,7 +71,7 @@ const Profile = () => {
 
               <p>
                 New Here ?{" "}
-                <Link to="/signUp" className="border-effect">
+                <Link to="/Profile/signUp" className="border-effect">
                   Create an Account
                 </Link>
               </p>
