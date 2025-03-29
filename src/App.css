@@ -793,10 +793,6 @@ font-weight:700;
   display: block;
 }
 
-.container {
-  position: relative;
-  z-index: 2;
-}
 
 h1 {
   color: white;
