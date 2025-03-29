@@ -45,7 +45,7 @@ const values={
       <Route path="/product/:id" exact={true} element={<ProductDetails />} />
       <Route path="/cart" exact={true} element={<Cart />} />
       <Route path="/Profile/signIn" exact={true} element={<Profile/>} />
-      <Route path="/signUp" exact={true} element={<SignUp/>} />
+      <Route path="profile/signUp" exact={true} element={<SignUp/>} />
 
       </Routes >
 
