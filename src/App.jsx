@@ -12,6 +12,7 @@ import { useState ,createContext } from 'react';
 import SignUp from './pages/profile/SignUp';
 
  export const MyContext = createContext();
+ 
 function App() {
   
 const [isHeaderFooterShow,setIsHeaderFooterShow] =useState(true);
