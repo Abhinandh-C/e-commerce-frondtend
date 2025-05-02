@@ -1,12 +1,13 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext  } from "react";
 import { Button } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import Card from "react-bootstrap/Card";
-import axios from "axios";
+import Axios from "../Axios/Axios";
 import { GiSelfLove } from "react-icons/gi";
 import DialogueEnlarge from "../../pages/Homes/DialogueEnlarge";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../App";
 
 const ProductsList = (props) => {
   const [data, setData] = useState([]);
@@ -14,17 +15,42 @@ const ProductsList = (props) => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchNewData = async () => {
+       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("https://fakestoreapi.com/products");
-        setData(Array.isArray(response.data) ? response.data : []);
+
+        const response = await Axios.get("/admin/viewproduct", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (Array.isArray(response.data)) {
+          setData(response.data);
+        } else if (response.data.products && Array.isArray(response.data.products)) {
+          setData(response.data.products);  // Adjust according to API structure
+        } else {
+          setData([]);
+        }
       } catch (error) {
-        console.error("Error fetching best sellers:", error);
+        console.error("Error fetching new products:", error);
         setData([]);
       }
     };
-    fetchData();
+    fetchNewData();
   }, []);
+
+
+  
+  const context = useContext(MyContext);
+
+  useEffect(() => {
+    context.setIsHeaderFooterShow(true);
+  }, [context]); 
+
+
+   useEffect(() => {
+      context.setIsFooterShow(true);
+    }, [context]);
+  
+
 
 
 
@@ -66,7 +92,7 @@ const ProductsList = (props) => {
               <Card.Img
                 className={getDescription === 'one' ? "imegeOne" : "normalImage"}
                 variant="top"
-                src={item.image}
+                src={`http://localhost:3000${item.image[0]}`}
                 
                 style={{
                   objectFit: "contain",
@@ -99,7 +125,7 @@ const ProductsList = (props) => {
             {/* Card Body */}
             <Card.Body className="d-flex flex-column justify-content-between">
               <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}><Link className="productLink" to="/product/:id">
-                {item.title} </Link>
+                {item.product_name} </Link>
                   
                  
               </Card.Title>
@@ -113,7 +139,7 @@ const ProductsList = (props) => {
                 <p className="text-success">In Stock</p>
                 {item.rating && (
                   <Rating
-                    value={item.rating.rate}
+                    value={item.rating}
                     readOnly
                     size="small"
                     precision={0.5}
