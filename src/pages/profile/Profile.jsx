@@ -1,9 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import { MyContext } from "../../App";
 import logo from "../../assets/images/logo.png";
 import TextField from "@mui/material/TextField";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Axios from "../../component/Axios/Axios";
+import { useNavigate } from 'react-router-dom';
+
 
 const Profile = () => {
   const context = useContext(MyContext);
@@ -14,6 +17,42 @@ const Profile = () => {
   useEffect(() => {
     context.setIsFooterShow(false);
   }, [context]);
+
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
+  const navigate = useNavigate();
+
+  const handleValidation = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await Axios.post('/login', { email, password }, {headers:{
+        'Content-Type':'application/json'
+      }, withCredentials: true });
+
+
+      // Assuming backend responds with { token: "..." } or { user, token }
+      if (response.status === 200) {
+        const { token, user } = response.data;
+
+        // Store token in localStorage or sessionStorage
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+
+        // Navigate to protected route
+        navigate('/');
+      }
+    } catch (error) {
+      console.error("Error while logging in:", error);
+      if (error.response && error.response.data?.message) {
+        setErrorMsg(error.response.data.message);
+      } else {
+        setErrorMsg('Login failed. Please check your credentials.');
+      }
+    }
+  };
 
   return (
     <div>
@@ -34,7 +73,7 @@ const Profile = () => {
               </a>
             </div>
 
-            <form>
+            <form onSubmit={handleValidation}>
               <h2
                 className="d-flex justify-content-center "
                 style={{ color: "#383a95" }}
@@ -47,6 +86,8 @@ const Profile = () => {
                   label="E-mail"
                   type="e-mail"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   variant="standard"
                   className="w-100"
                 />
@@ -57,6 +98,8 @@ const Profile = () => {
                   label="password"
                   type="password"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   variant="standard"
                   className="w-100"
                 />
@@ -67,7 +110,7 @@ const Profile = () => {
                 forget password?
               </a>
 
-              <Button className="signInButton">Sign In</Button>
+              <Button type="submit" className="signInButton">Sign In</Button>
 
               <p>
                 New Here ?{" "}
