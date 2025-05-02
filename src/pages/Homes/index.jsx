@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext  } from "react";
 import HomeBanner from "../../component/homebanner";
 import add from "../../assets/images/animated.gif";
 import canvas from "../../assets/images/canvas.gif";
@@ -10,10 +10,11 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Rating from "@mui/material/Rating";
 import Card from "react-bootstrap/Card";
-import axios from "axios";
 import { GiSelfLove } from "react-icons/gi";
 import DialogueEnlarge from "./DialogueEnlarge";
 import { Link } from "react-router-dom";
+import Axios from "../../component/Axios/Axios";
+import { MyContext } from "../../App";
 
 
 const Home = () => {
@@ -21,23 +22,53 @@ const Home = () => {
   const [newData, setNewData] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
+  const context = useContext(MyContext);
+
+  useEffect(() => {
+    context.setIsHeaderFooterShow(true);
+  }, [context]); 
+
+
+   useEffect(() => {
+      context.setIsFooterShow(true);
+    }, [context]);
+  
+
+
   useEffect(() => {
     const fetchData = async () => {
+      const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("https://fakestoreapi.com/products");
-        setData(Array.isArray(response.data) ? response.data : []);
+        const response = await Axios.get("/admin/viewproduct", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        if (Array.isArray(response.data)) {
+          setData(response.data);
+        } else if (response.data.products && Array.isArray(response.data.products)) {
+          setData(response.data.products);  // Adjust according to API structure
+        } else {
+          setData([]);
+        }
       } catch (error) {
-        console.error("Error fetching best sellers:", error);
+        console.error("Error fetching new products:", error);
         setData([]);
       }
     };
     fetchData();
   }, []);
 
+
+
+  
   useEffect(() => {
     const fetchNewData = async () => {
+       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("https://api.escuelajs.co/api/v1/products");
+
+        const response = await Axios.get("/admin/viewproduct", {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         if (Array.isArray(response.data)) {
           setNewData(response.data);
         } else if (response.data.products && Array.isArray(response.data.products)) {
@@ -113,7 +144,7 @@ const Home = () => {
                         >
                           <Card.Img className="cardImage"
                             variant="top"
-                            src={item.image}
+                            src={`http://localhost:3000${item.image[0]}`}
                             style={{
                               maxHeight: "95%",
                               maxWidth: "%",
@@ -147,12 +178,12 @@ const Home = () => {
                         {/* Card Body */}
                         <Card.Body className="d-flex flex-column justify-content-between">
                           <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}><Link className="productLink" to="/product/:id">
-                            {item.title.length > 50 ? item.title.slice(0, 50) + "..." : item.title}</Link>
+                            {item.product_name.length > 50 ? item.product_name.slice(0, 50) + "..." : item.product_name}</Link>
                           </Card.Title>
 
                           <div className="info">
                             <p className="text-success">In Stock</p>
-                            <Rating value={item.rating.rate} readOnly size="small" precision={0.5} />
+                            <Rating value={item.rating} readOnly size="small" precision={0.5} />
                             <div className="d-flex">
                               <span className="oldPrice"> ₹{Math.round((item.price / 88) * 100)}</span>
                               <span className="newPrice ms-2">₹{item.price}</span>
@@ -227,7 +258,7 @@ const Home = () => {
                         >
                           <Card.Img className="cardImage"
                             variant="top"
-                            src={obj.images}
+                            src={`http://localhost:3000${obj.image[0]}`}
                             style={{
                               maxHeight: "95%",
                               maxWidth: "95%",
@@ -261,14 +292,14 @@ const Home = () => {
                         {/* Card Body */}
                         <Card.Body className="d-flex flex-column justify-content-between">
                           <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}><Link className="productLink" to="/product/:id">
-                          {obj.title.length > 50 ? obj.title.slice(0, 50) + "..." : obj.title}</Link>
+                          {obj.product_name.length > 50 ? obj.product_name.slice(0, 50) + "..." : obj.product_name}</Link>
                             
                             
                           </Card.Title>
 
                           <div className="info">
                             <p className="text-success">In Stock</p>
-                           
+                            <Rating value={obj.rating} readOnly size="small" precision={0.5} />
                            <p> {obj.description.length >30 ?obj.description.slice(0,30)+ "...":obj.description} </p>
                             <div className="d-flex">
                               <span className="oldPrice"> ₹{Math.round((obj.price / 88) * 100)}</span>
