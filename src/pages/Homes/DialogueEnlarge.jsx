@@ -18,7 +18,7 @@ const DialogueEnlarge = ({ show, handleClose, product }) => {
           {/* Left Side - Product Images */}
           <div className="product-images d-flex flex-column me-4">
             <img
-              src={productImage}
+              src={`http://localhost:3000${product.image[0]}`}
               alt={product.title}
               style={{ width: "250px", height: "250px", objectFit: "contain" }}
             />
@@ -28,7 +28,7 @@ const DialogueEnlarge = ({ show, handleClose, product }) => {
           <div className="product-info w-100">
             {/* Close Button Positioned in Top-Right Corner */}
             <div className="d-flex justify-content-between align-items-start">
-              <h4>{product.title}</h4>
+              <h4>{product.product_name}</h4>
               <Button variant="light" className="p-2 shadow-sm " onClick={handleClose}>
                 <SiVexxhost size={20} color="red"/>
               </Button>
