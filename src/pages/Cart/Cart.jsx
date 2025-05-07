@@ -1,13 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { MyContext } from "../../App";
-import sb from "../../assets/images/sb.jpeg";
-import moist from "../../assets/images/moist.jpeg";
-import redbull from "../../assets/images/redbull.jpeg";
 import Rating from "@mui/material/Rating";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { IoClose } from "react-icons/io5";
 import Axios from "../../component/Axios/Axios";
+import { notifySuccess,notifyError } from "../../component/utilities/utilities";
 
 const Cart = () => {
   const [carts, setCarts] = useState([]);
@@ -19,8 +17,8 @@ const Cart = () => {
     context.setIsHeaderFooterShow(false);
   }, [context]);
 
-  useEffect(() => {
-    const fetch = async () => {
+ 
+    const fetchCartItems = async () => {
       const token = localStorage.getItem("token");
       try {
         const response = await Axios.get("/viewcart", {
@@ -35,10 +33,47 @@ const Cart = () => {
       } catch (err) {
         console.error("Error fetching orders:", err);
       }
+
+
+
+
+
     };
 
-    fetch();
-  }, []);
+
+
+
+
+  
+  const deletecart =async(id)=>{
+    const token = localStorage.getItem("token")
+
+    if (!id) {
+      console.error("Cart item ID is undefined");
+      notifyError("Invalid cart item");
+      return;
+    }
+    1
+
+  
+  try {
+    await Axios.delete(`/removefromcart/${id}`,{
+    headers :{Authorization : `Bearer ${token}`}
+    });
+    notifySuccess("order deleted successfully");
+    await fetchCartItems();
+
+  } catch (error) {
+    console.error("Delete error:", error);
+    notifyError("Failed to delete order");
+  }
+
+}
+  
+
+useEffect(() => {
+  fetchCartItems();
+}, []);
 
   const handleQuantityChange = (id, change) => {
     setQuantity(prevQuantity => ({
@@ -98,7 +133,7 @@ const Cart = () => {
                           >
                             -
                           </Button>
-                          <span className="mx-2">{quantity[cart._id] || 1}</span>
+                          <span className="mx-2">{quantity[cart._id] || cart.quantity}</span>
                           <Button
                             variant="outline-secondary"
                             onClick={() => handleQuantityChange(cart._id, 1)}
@@ -107,9 +142,9 @@ const Cart = () => {
                           </Button>
                         </td>
 
-                        <td>{cart.price * (quantity[cart._id] || 1)}</td>
+                        <td>{cart.price * (quantity[cart._id] || cart.quantity)}</td>
                         <td>
-                          <span className="remove">
+                          <span onClick={()=>deletecart(cart.productid._id)} className="remove">
                             <IoClose />
                           </span>
                         </td>
