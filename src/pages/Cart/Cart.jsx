@@ -5,81 +5,79 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { IoClose } from "react-icons/io5";
 import Axios from "../../component/Axios/Axios";
-import { notifySuccess,notifyError } from "../../component/utilities/utilities";
+import { notifySuccess, notifyError } from "../../component/utilities/utilities";
 
 const Cart = () => {
   const [carts, setCarts] = useState([]);
-  const [quantity, setQuantity] = useState({});
-
   const context = useContext(MyContext);
 
   useEffect(() => {
     context.setIsHeaderFooterShow(false);
-  }, [context]);
+    fetchCartItems();
+  }, []);
 
- 
-    const fetchCartItems = async () => {
-      const token = localStorage.getItem("token");
-      try {
-        const response = await Axios.get("/viewcart", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+  const fetchCartItems = async () => {
+    const token = localStorage.getItem("token");
+    try {
+      const response = await Axios.get("/viewcart", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
-        const data = response.data;
-
-        if (response.status === 200 && response.data.cart) {
-          setCarts(response.data.cart);
-        }
-      } catch (err) {
-        console.error("Error fetching orders:", err);
+      if (response.status === 200 && response.data.cart) {
+        setCarts(response.data.cart);
+        console.log(response.data.cart);
+        
       }
-
-
-
-
-
-    };
-
-
-
-
-
-  
-  const deletecart =async(id)=>{
-    const token = localStorage.getItem("token")
-
-    if (!id) {
-      console.error("Cart item ID is undefined");
-      notifyError("Invalid cart item");
-      return;
+    } catch (err) {
+      console.error("Error fetching cart items:", err);
     }
-    1
+  };
 
+  const deleteCartItem = async (productId) => {
+    const token = localStorage.getItem("token");
+
+    try {
+      await Axios.delete(`/removefromcart/${productId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      notifySuccess("Item removed from cart");
+      fetchCartItems();
+    } catch (error) {
+      console.error("Delete error:", error);
+      notifyError("Failed to delete item");
+    }
+  };
+
+  const removeAllCartItem =async()=>{
+    const token = localStorage.getItem("token");
   
   try {
-    await Axios.delete(`/removefromcart/${id}`,{
-    headers :{Authorization : `Bearer ${token}`}
+    await Axios.delete('/removeAllCart',{
+      headers:{Authorization:`Bearer ${token}`},
     });
-    notifySuccess("order deleted successfully");
-    await fetchCartItems();
-
+    notifySuccess(" All Item removed from cart");
+      fetchCartItems()
+    
   } catch (error) {
     console.error("Delete error:", error);
-    notifyError("Failed to delete order");
+    notifyError("Failed to delete item");
   }
-
 }
-  
 
-useEffect(() => {
-  fetchCartItems();
-}, []);
+  const handleQuantityChange = async (id, currentQty, change) => {
+    const newQty = Math.max(1, parseInt(currentQty) + change);
+    const token = localStorage.getItem("token");
 
-  const handleQuantityChange = (id, change) => {
-    setQuantity(prevQuantity => ({
-      ...prevQuantity,
-      [id]: Math.max(1, (prevQuantity[id] || 1) + change), // ensure the quantity never goes below 1
-    }));
+    try {
+      await Axios.put(`/updatecart/${id}`, { quantity: newQty }, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      notifySuccess("Quantity updated");
+      fetchCartItems();
+    } catch (error) {
+      console.error("Update error:", error);
+      notifyError("Failed to update quantity");
+    }
   };
 
   return (
@@ -87,9 +85,7 @@ useEffect(() => {
       <section className="section_cart">
         <div className="container mt-5">
           <h2 className="hd mb-1">Your Cart</h2>
-          <p>
-            There are <b>{carts.length}</b> products in your cart
-          </p>
+          <p>There are <b>{carts.length}</b> products in your cart</p>
           <div className="row">
             <div className="col-md-8">
               <div className="table-responsive">
@@ -104,17 +100,16 @@ useEffect(() => {
                     </tr>
                   </thead>
                   <tbody>
-                    {carts.map((cart, index) => (
-                      <tr key={cart._id || index}>
+                    {carts?.products?.map(cart => (
+                      <tr key={cart._id}>
                         <td>
                           <Link className="productLink" to="/product/1">
                             <div className="d-flex align-items-center cartItemImgWrapper">
-                              <div className="imgWrapper" >
+                              <div className="imgWrapper">
                                 <img
                                   src={`http://localhost:3000${cart.productid.image[0]}`}
                                   alt={cart.title}
                                   className="w-50"
-                                  
                                 />
                               </div>
                               <div className="info px-3" style={{ fontWeight: "bold" }}>
@@ -125,26 +120,24 @@ useEffect(() => {
                           </Link>
                         </td>
                         <td>{cart.price}</td>
-
                         <td>
                           <Button
                             variant="outline-secondary"
-                            onClick={() => handleQuantityChange(cart._id, -1)}
+                            onClick={() => handleQuantityChange(cart.productid._id, cart.quantity, -1)}
                           >
                             -
                           </Button>
-                          <span className="mx-2">{quantity[cart._id] || cart.quantity}</span>
+                          <span className="mx-2">{cart.quantity}</span>
                           <Button
                             variant="outline-secondary"
-                            onClick={() => handleQuantityChange(cart._id, 1)}
+                            onClick={() => handleQuantityChange(cart.productid._id, cart.quantity, +1)}
                           >
                             +
                           </Button>
                         </td>
-
-                        <td>{cart.price * (quantity[cart._id] || cart.quantity)}</td>
+                        <td>{cart.price * cart.quantity}</td>
                         <td>
-                          <span onClick={()=>deletecart(cart.productid._id)} className="remove">
+                          <span onClick={() => deleteCartItem(cart.productid._id)} className="remove">
                             <IoClose />
                           </span>
                         </td>
@@ -160,21 +153,22 @@ useEffect(() => {
                   <Button className="couponButton ms-2">Apply Coupon</Button>
                 </div>
                 <div>
-                  <Button className="couponButtonn">Remove All</Button>
+                  <Button className="couponButtonn"onClick={removeAllCartItem}>Remove All</Button>
                 </div>
               </div>
             </div>
 
             <div className="col-md-4">
-              <div className="cart border p-3 cartDetails">
+             
+                <div className="cart border p-3 cartDetails">
                 <h4>CART TOTALS</h4>
                 <div className="cartTotal">
                   <span>Subtotal</span>
-                  <span>₹10000</span>
+                  <span>₹{carts?.Netamount}</span>
                 </div>
                 <div className="cartTotal">
                   <span>Discount</span>
-                  <span style={{ color: "#3a8f3e" }}>-₹1000</span>
+                  <span style={{ color: "#3a8f3e" }}>-₹100</span>
                 </div>
                 <div className="cartTotal">
                   <span>Platform Fee</span>
@@ -189,12 +183,14 @@ useEffect(() => {
                 </div>
                 <div className="amountTotal">
                   <span>Total Amount</span>
-                  <span style={{ color: "red" }}>₹8995</span>
+                  <span style={{ color: "red" }}>{carts?.Netamount -100 +5}</span>
                 </div>
                 <div>
                   <Button className="cartButton">Proceed to Checkout</Button>
                 </div>
               </div>
+
+               
             </div>
           </div>
         </div>
