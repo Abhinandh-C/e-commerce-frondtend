@@ -124,7 +124,7 @@ const ProductsList = (props) => {
 
             {/* Card Body */}
             <Card.Body className="d-flex flex-column justify-content-between">
-              <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}><Link className="productLink" to="/product/:id">
+              <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}><Link className="productLink" to={`/product/${item._id}`}>
                 {item.product_name} </Link>
                   
                  
